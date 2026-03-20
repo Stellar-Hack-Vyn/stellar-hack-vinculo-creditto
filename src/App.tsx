@@ -7,6 +7,7 @@ import { AppProvider } from "@/context/AppContext";
 import Index from "./pages/Index.tsx";
 import Historial from "./pages/Historial.tsx";
 import Perfil from "./pages/Perfil.tsx";
+import Onboarding from "./pages/Onboarding.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -19,6 +20,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <Routes>
+            <Route path="/bienvenida" element={<Onboarding />} />
             <Route path="/" element={<Index />} />
             <Route path="/historial" element={<Historial />} />
             <Route path="/perfil" element={<Perfil />} />
