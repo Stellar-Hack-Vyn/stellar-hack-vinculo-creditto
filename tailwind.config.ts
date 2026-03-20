@@ -97,8 +97,8 @@ export default {
           "100%": { strokeDashoffset: "0" },
         },
         "pulse-emerald": {
-          "0%, 100%": { boxShadow: "0 0 0 0 hsla(160, 60%, 38%, 0.4)" },
-          "50%": { boxShadow: "0 0 0 12px hsla(160, 60%, 38%, 0)" },
+          "0%, 100%": { boxShadow: "0 0 0 0 hsla(8, 76%, 62%, 0.4)" },
+          "50%": { boxShadow: "0 0 0 12px hsla(8, 76%, 62%, 0)" },
         },
       },
       animation: {

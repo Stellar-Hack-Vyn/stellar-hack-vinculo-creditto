@@ -17,8 +17,8 @@ const Index = () => {
       {/* Header */}
       <header className="px-5 pt-[max(1rem,env(safe-area-inset-top))] pb-3 flex items-center justify-between">
         <div>
-          <h1 className="text-xl font-bold text-foreground tracking-tight">Vínculo</h1>
-          <p className="text-xs text-muted-foreground">Construye tu reputación crediticia</p>
+          <h1 className="text-xl font-extrabold text-foreground tracking-tight">Vínculo</h1>
+          <p className="text-xs text-muted-foreground">Tu camino al crédito 💪</p>
         </div>
         <button
           onClick={simulateWeek}

@@ -16,7 +16,7 @@ const ProgressRing = () => {
             <circle cx="50" cy="50" r={radius} fill="none" stroke="hsl(var(--border))" strokeWidth="6" />
             <circle
               cx="50" cy="50" r={radius} fill="none"
-              stroke={isUnlocked ? "hsl(var(--emerald))" : "hsl(var(--navy))"}
+              stroke={isUnlocked ? "hsl(var(--teal))" : "hsl(var(--coral))"}
               strokeWidth="6" strokeLinecap="round"
               strokeDasharray={circumference}
               strokeDashoffset={offset}
@@ -24,7 +24,7 @@ const ProgressRing = () => {
             />
           </svg>
           <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-lg font-bold text-foreground tabular-nums">
+            <span className="text-lg font-extrabold text-foreground tabular-nums">
               {Math.round(progress * 100)}%
             </span>
           </div>
@@ -32,10 +32,10 @@ const ProgressRing = () => {
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-1">
             <Shield className="w-4 h-4 text-muted-foreground" />
-            <span className="text-xs font-semibold tracking-wide uppercase text-muted-foreground">Reputación</span>
+            <span className="text-xs font-bold tracking-wide uppercase text-muted-foreground">Reputación</span>
           </div>
-          <p className="text-base font-semibold text-foreground text-balance">
-            {isUnlocked ? "¡Nivel Plata Alcanzado!" : "Camino al Nivel Plata"}
+          <p className="text-base font-bold text-foreground text-balance">
+            {isUnlocked ? "¡Nivel Plata Alcanzado! 🎉" : "Camino al Nivel Plata"}
           </p>
           <p className="text-sm text-muted-foreground mt-0.5">
             {depositsCount} de {requiredDeposits} depósitos realizados
