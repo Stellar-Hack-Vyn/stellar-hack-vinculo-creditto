@@ -52,28 +52,28 @@ const Perfil = () => {
         {/* Reputation card */}
         <div
           className={`card-elevated p-5 border-2 opacity-0 animate-fade-up ${
-            isUnlocked ? "border-emerald/20" : "border-transparent"
+            isUnlocked ? "border-primary/20" : "border-transparent"
           }`}
           style={{ animationDelay: "200ms", animationFillMode: "forwards" }}
         >
           <div className="flex items-center gap-2 mb-3">
-            <Shield className="w-4 h-4 text-emerald" />
+            <Shield className="w-4 h-4 text-primary" />
             <span className="text-xs font-semibold tracking-wide uppercase text-muted-foreground">Estado de Reputación</span>
           </div>
           <div className="w-full h-2 bg-secondary rounded-full overflow-hidden mb-2">
             <div
-              className="h-full bg-emerald rounded-full transition-all duration-700"
+              className="h-full bg-primary rounded-full transition-all duration-700"
               style={{ width: `${Math.min((depositsCount / requiredDeposits) * 100, 100)}%` }}
             />
           </div>
           <div className="flex justify-between text-xs text-muted-foreground">
             <span>{depositsCount} de {requiredDeposits} depósitos</span>
-            <span className={isUnlocked ? "text-emerald font-semibold" : ""}>{isUnlocked ? "✓ Desbloqueado" : "En progreso"}</span>
+            <span className={isUnlocked ? "text-primary font-semibold" : ""}>{isUnlocked ? "✓ Desbloqueado" : "En progreso"}</span>
           </div>
           {creditWithdrawn && (
-            <div className="mt-3 bg-emerald/10 rounded-lg p-3">
-              <p className="text-xs font-semibold text-emerald">Crédito retirado exitosamente</p>
-            </div>
+             <div className="mt-3 bg-primary/10 rounded-lg p-3">
+               <p className="text-xs font-semibold text-primary">Crédito retirado exitosamente ✅</p>
+             </div>
           )}
         </div>
 

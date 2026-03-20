@@ -67,13 +67,13 @@ const Historial = () => {
                     <div key={tx.id} className="flex items-center gap-3 px-5 py-3.5">
                       <div
                         className={`w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 ${
-                          tx.type === "deposit" ? "bg-emerald/10" : "bg-primary/10"
+                          tx.type === "deposit" ? "bg-primary/10" : "bg-accent/10"
                         }`}
                       >
                         {tx.type === "deposit" ? (
-                          <ArrowUpRight className="w-4 h-4 text-emerald" />
+                          <ArrowUpRight className="w-4 h-4 text-primary" />
                         ) : (
-                          <ArrowDownToLine className="w-4 h-4 text-primary" />
+                          <ArrowDownToLine className="w-4 h-4 text-accent" />
                         )}
                       </div>
                       <div className="flex-1 min-w-0">
@@ -84,7 +84,7 @@ const Historial = () => {
                       </div>
                       <span
                         className={`text-sm font-semibold tabular-nums ${
-                          tx.type === "deposit" ? "text-emerald" : "text-foreground"
+                          tx.type === "deposit" ? "text-primary" : "text-foreground"
                         }`}
                       >
                         {tx.type === "deposit" ? "+" : "-"}{tx.amount} XLM

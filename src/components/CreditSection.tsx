@@ -16,7 +16,6 @@ const CreditSection = () => {
     }, 1500);
   };
 
-  // Dismiss celebration
   if (showUnlockCelebration) {
     setTimeout(() => setShowUnlockCelebration(false), 4000);
   }
@@ -29,9 +28,9 @@ const CreditSection = () => {
           <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center mb-3">
             <Lock className="w-5 h-5 text-muted-foreground" />
           </div>
-          <p className="text-sm font-semibold text-foreground mb-1">Crédito Bloqueado</p>
+          <p className="text-sm font-bold text-foreground mb-1">Crédito Bloqueado 🔒</p>
           <p className="text-sm text-muted-foreground max-w-[260px]">
-            Sigue ahorrando para desbloquear tu crédito de <span className="font-semibold text-foreground">{creditAmount} XLM</span>
+            Sigue ahorrando para desbloquear tu crédito de <span className="font-bold text-foreground">{creditAmount} XLM</span>
           </p>
         </div>
       </div>
@@ -39,29 +38,29 @@ const CreditSection = () => {
   }
 
   return (
-    <div className={`card-elevated p-6 border-2 border-emerald/20 transition-all duration-700 ${showUnlockCelebration ? "unlock-glow animate-scale-up" : ""}`}>
+    <div className={`card-elevated p-6 border-2 border-primary/20 transition-all duration-700 ${showUnlockCelebration ? "unlock-glow animate-scale-up" : ""}`}>
       <div className="flex items-center gap-2 mb-1">
-        <Sparkles className="w-4 h-4 text-emerald" />
-        <span className="text-xs font-semibold tracking-wide uppercase text-emerald">Mi Crédito</span>
+        <Sparkles className="w-4 h-4 text-primary" />
+        <span className="text-xs font-bold tracking-wide uppercase text-primary">Mi Crédito</span>
       </div>
 
       {creditWithdrawn ? (
         <div className="py-4 text-center">
-          <p className="text-lg font-bold text-foreground">Crédito Retirado</p>
+          <p className="text-lg font-bold text-foreground">Crédito Retirado ✅</p>
           <p className="text-sm text-muted-foreground mt-1">{creditAmount} XLM transferidos a tu wallet</p>
         </div>
       ) : (
         <>
           {showUnlockCelebration && (
-            <div className="bg-emerald/10 rounded-xl p-3 mb-4 mt-2">
-              <p className="text-sm font-semibold text-emerald text-center">
+            <div className="bg-primary/10 rounded-xl p-3 mb-4 mt-2">
+              <p className="text-sm font-bold text-primary text-center">
                 🎉 ¡Nivel Plata Alcanzado! Tienes un crédito disponible
               </p>
             </div>
           )}
           <div className="flex items-baseline gap-1 mt-3 mb-1">
-            <span className="text-3xl font-bold text-foreground tabular-nums">{creditAmount}</span>
-            <span className="text-lg font-medium text-muted-foreground">XLM</span>
+            <span className="text-3xl font-extrabold text-foreground tabular-nums">{creditAmount}</span>
+            <span className="text-lg font-semibold text-muted-foreground">XLM</span>
           </div>
           <p className="text-sm text-muted-foreground mb-5">Crédito disponible</p>
           <button
