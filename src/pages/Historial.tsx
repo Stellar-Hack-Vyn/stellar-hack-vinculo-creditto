@@ -84,7 +84,7 @@ const Historial = () => {
                       </div>
                       <span
                         className={`text-sm font-semibold tabular-nums ${
-                          tx.type === "deposit" ? "text-emerald" : "text-foreground"
+                          tx.type === "deposit" ? "text-primary" : "text-foreground"
                         }`}
                       >
                         {tx.type === "deposit" ? "+" : "-"}{tx.amount} XLM

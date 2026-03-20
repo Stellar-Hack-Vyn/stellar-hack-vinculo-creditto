@@ -71,9 +71,9 @@ const Perfil = () => {
             <span className={isUnlocked ? "text-primary font-semibold" : ""}>{isUnlocked ? "✓ Desbloqueado" : "En progreso"}</span>
           </div>
           {creditWithdrawn && (
-            <div className="mt-3 bg-emerald/10 rounded-lg p-3">
-              <p className="text-xs font-semibold text-emerald">Crédito retirado exitosamente</p>
-            </div>
+             <div className="mt-3 bg-primary/10 rounded-lg p-3">
+               <p className="text-xs font-semibold text-primary">Crédito retirado exitosamente ✅</p>
+             </div>
           )}
         </div>
 
