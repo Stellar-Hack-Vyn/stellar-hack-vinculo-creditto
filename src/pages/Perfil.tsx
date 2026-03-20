@@ -62,7 +62,7 @@ const Perfil = () => {
           </div>
           <div className="w-full h-2 bg-secondary rounded-full overflow-hidden mb-2">
             <div
-              className="h-full bg-emerald rounded-full transition-all duration-700"
+              className="h-full bg-primary rounded-full transition-all duration-700"
               style={{ width: `${Math.min((depositsCount / requiredDeposits) * 100, 100)}%` }}
             />
           </div>
