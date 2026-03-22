@@ -100,13 +100,10 @@ const ProgressRing = () => {
         setOnChainTier(blockchainTier);
 
         // 🚀 LÓGICA DE ACTUALIZACIÓN DE SBT
-        // Calculamos qué nivel de NFT DEBERÍA tener según su dynamicScore
         const calculatedTier = scoreData.tier || 0;
         
-        // Si el nivel que merece (calculatedTier) es mayor al que tiene minteado (blockchainTier), necesita mintear
         if (calculatedTier > blockchainTier && calculatedTier >= 1) {
           setNeedsMinting(true);
-          // Buscamos la info visual de ese nivel para el botón
           setLevelToMint(LEVELS[calculatedTier] || LEVELS[1]);
         } else {
           setNeedsMinting(false);
@@ -120,7 +117,7 @@ const ProgressRing = () => {
     };
 
     fetchRiskScore();
-    
+
     return () => { isMounted = false; };
   }, [deposits]);
 
