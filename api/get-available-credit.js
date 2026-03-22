@@ -33,6 +33,14 @@ export default async function handler(req, res) {
   if (!userAddress) return res.status(400).json({ error: "Falta wallet" });
 
   try {
+    // GUARD CLAUSES: Protegemos contra variables de entorno ausentes en Vercel
+    if (!process.env.SECRET_KEY_ADMIN) {
+      throw new Error("VARIABLE FALTANTE EN VERCEL: process.env.SECRET_KEY_ADMIN no está definida.");
+    }
+    if (!process.env.NFT_CONTRACT_ID) {
+      throw new Error("VARIABLE FALTANTE EN VERCEL: process.env.NFT_CONTRACT_ID no está definida.");
+    }
+
     const RPC_URL = "https://soroban-testnet.stellar.org";
     const server = new rpc.Server(RPC_URL);
 

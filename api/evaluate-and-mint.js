@@ -46,8 +46,21 @@ function computeScoreAndTier(wMean, mad, n) {
 
 async function mintNftOnChain(userAddress, tier) {
   try {
+    // GUARD CLAUSES: Validaciones estrictas antes de tocar el SDK de Stellar
+    if (!process.env.SECRET_KEY_ADMIN) {
+      throw new Error("VARIABLE FALTANTE EN VERCEL: process.env.SECRET_KEY_ADMIN no está definida.");
+    }
+    if (!process.env.NFT_CONTRACT_ID) {
+      throw new Error("VARIABLE FALTANTE EN VERCEL: process.env.NFT_CONTRACT_ID no está definida.");
+    }
+    if (!userAddress) {
+      throw new Error("DATO FALTANTE: No se recibió la wallet del usuario (userAddress).");
+    }
+
     const RPC_URL = "https://soroban-testnet.stellar.org";
     const server = new rpc.Server(RPC_URL);
+    
+    // Si SECRET_KEY_ADMIN es undefined, aquí tronaría con "encoded argument must be of type String"
     const adminKeypair = Keypair.fromSecret(process.env.SECRET_KEY_ADMIN);
     const account = await server.getAccount(adminKeypair.publicKey());
 
