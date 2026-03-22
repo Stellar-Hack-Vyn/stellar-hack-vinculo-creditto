@@ -41,7 +41,8 @@ const Perfil = () => {
     const fetchRiskScore = async () => {
       if (deposits.length === 0) return;
       try {
-        const response = await fetch("http://localhost:3000/api/calculate-score", {
+        const API_BASE = import.meta.env.VITE_API_BASE_URL || "";
+        const response = await fetch(`${API_BASE}/api/calculate-score`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ address: "SIMULACION", deposits })
@@ -74,7 +75,8 @@ const Perfil = () => {
     }
     setIsMinting(true);
     try {
-      const response = await fetch("http://localhost:3000/api/evaluate-and-mint", {
+      const API_BASE = import.meta.env.VITE_API_BASE_URL || "";
+      const response = await fetch(`${API_BASE}/api/evaluate-and-mint`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userAddress: walletAddress, deposits })

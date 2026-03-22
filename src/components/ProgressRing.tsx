@@ -65,13 +65,14 @@ const ProgressRing = () => {
         const wallet = profile?.wallet_address;
         if (!wallet) return;
 
+        const API_BASE = import.meta.env.VITE_API_BASE_URL || "";
         const [onChainRes, scoreRes] = await Promise.all([
-          fetch("http://localhost:3000/api/get-available-credit", {
+          fetch(`${API_BASE}/api/get-available-credit`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ userAddress: wallet })
           }),
-          fetch("http://localhost:3000/api/calculate-score", {
+          fetch(`${API_BASE}/api/calculate-score`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ address: wallet, deposits: deposits })
